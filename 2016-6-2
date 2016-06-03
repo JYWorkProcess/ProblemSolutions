@@ -1,0 +1,14 @@
+Postman是一种网页调试与发送网页http请求的chrome插件。我们可以用来很方便的模拟get或者post或者其他方式的请求来调试接口。本文是使用的Mac端的app。利用第三方平台LeanCloud存储转发消息，在测试环境下发送到leancloud错误消息的时候，需要及时删除或者修改，要不然会对其他需要协作的第三方造成一定的困扰。一下以删除为例简单介绍一下。
+
+一、下载
+
+https://www.getpostman.com/
+
+二、使用Postman
+
+1，打开，选择delete
+
+2，根据leancloud的api设置，在Postman的Headers里配置key,value，以及在URL里配置网址对应的参数
+
+3，设置好了之后，点击send即可。
+

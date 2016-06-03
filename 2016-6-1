@@ -1,0 +1,36 @@
+一、问题：
+代码中已经标注
+@JONField(name = "attrs")
+
+private String abc;
+
+public String getA() {
+
+	return abc;
+
+}
+
+public void setA(String abc) {
+
+	this.abc = abc;
+
+}
+
+ 
+
+ 在发送消息的时候，会发现消息接受到的Json消息是abc对应的字段是a。
+
+  
+
+二、解决方法：
+
+  发现这个问题的时候，大概感觉应该是get和set函数名的为题，将其改成getAbc(),setAbc()，再发送消息的时候，会发现abc对应的字段是attrs了。
+
+   
+三、原因：
+
+   请教大牛，查看了框架代码，并没有看的太明白。
+
+   猜测大概是因为Java对象转化为Json字符串的时候，可能会有优先级，会先根据get函数之后的名称，也就是本例中的a去匹配成员变量，若没找到，字段名就是a；若找到了，也就是说若是abc，则能找到，就匹配上attrs，字段名就是attrs了。
+
+
